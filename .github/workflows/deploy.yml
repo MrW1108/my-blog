@@ -41,13 +41,7 @@ jobs:
 
       - name: 安装插件
         run: |
-          npm install hexo-renderer-pug --save
-          npm install hexo-renderer-stylus --save
-          npm install hexo-deployer-git --save
-          npm install hexo-generator-search --save
-          npm install hexo-generator-feed --save
-          npm install hexo-abbrlink --save
-          npm install hexo-wordcount --save
+          npm i
 
       - name: 部署博客
         run: |
