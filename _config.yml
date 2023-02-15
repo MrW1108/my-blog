@@ -115,7 +115,7 @@ deploy:
   type: git
   repo: 
     github: git@github.com:MrW1108/MrW1108.github.io.git
-    git2: git@49.232.242.91:/home/git/blog.git
+    # git2: git@49.232.242.91:/home/git/blog.git
   branch: master
   
 
