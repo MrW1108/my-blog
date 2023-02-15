@@ -1,14 +1,48 @@
-﻿# my-blog
+﻿---
 
-基于 hexo 搭建的个人博客，Record All~
+title: 'hexo,搭建个人博客'
+top: true
+cover: true
+toc: true
+date: 2021-01-08 
+summary: hexo 搭建个人博客,oss,cdn,shell
+categories:
+    - hexo
+tags:
+    - hexo
+    - cdn
+    - oss
+    - git
+    - shell
+
+
+---
+
+## 前言
+
+ 使用hexo和腾讯云搭建的个人博客   
+ hexo选用了开源主题 `hexo-theme-matery`,
+ 做了些许修改。
+
+ 博客的具体效果请观摩 [.paly的博客](http://paly.bwmgd.club)
+
+### 本文概要
+
+- hexo 使用，及怎么去改主题的模板
+- 腾讯云服务器，搭建 nginx/Apache
+- git配置，一键上传资源到网站根目录
+<!--- 百度、谷歌 seo 优化，让你的网站可以被搜索到--> 
+<!--- 阿里 oss 作为图片服务器-->
+<!--- CDN 加速提高首屏渲染-->
+<!--- 目录下，将所需静态资源上传到 oss-->
 
 ## hexo 使用
 
-```bash
-# 清楚构建生成的 public 目录
+```
+# 清除构建生成的 public 目录
 hexo clean
 # 生成当前目录资源
-hexo g
+hexo g 
 # 部署到远程
 hexo d
 # 本地预览
@@ -18,7 +52,10 @@ hexo s
 ### 文章编写
 
 ```bash
-hexo new post <title>
+hexo new post <title> 
+```
+```
+或者将md文件放进/source/_posts文件夹下
 ```
 
 #### 示例
@@ -39,9 +76,17 @@ summary: 这是你自定义的文章摘要内容，如果这个属性有值，�
 categories: Markdown
 tags:
   - Typora
-  - Markdown
+  - Markdown  
+
 ---
 ```
+
+文档 md 文件最前面的这些内容就会被利用生成 `标签` `分类` `归档` 内容。  
+`root/_config.yml` 为 hexo 的配置文件。  
+`root/themes/_config.yml` 为主题配置文件。
+
+
+
 
 | 配置选项      | 默认值                         | 描述                                                                                                                                                                                       |
 | ------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -63,11 +108,12 @@ tags:
 
 ## 搭建教程
 
-我写的关于 [hexo,搭建个人博客](https://mrw1108.github.io/2021/01/08/hexo-da-jian-ge-ren-bo-ke/)
+具体搭建请参考此教程 [hexo,搭建个人博客](http://mflyyou.cn/2020/03/06/hexo-da-jian-ge-ren-bo-ke/)
 
-## 部署
+<!--## 部署-->
 
-执行脚本 deploy.sh 会将构建好的 public 下的资源复制到远程服务器上
+<!--执行脚本 deploy.sh 会将构建好的 public 下的资源复制到远程服务器上-->
+
 
 ## 感谢
 
