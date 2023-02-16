@@ -48,7 +48,7 @@ tags:
 | title         | `Markdown` 的文件标题          | 文章标题，强烈建议填写此选项                                                                                                                                                               |
 | date          | 文件创建时的日期时间           | 发布时间，强烈建议填写此选项，且最好保证全局唯一                                                                                                                                           |
 | author        | 根 `_config.yml` 中的 `author` | 文章作者                                                                                                                                                                                   |
-| img           | `featureImages` 中的某个值     | 文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: `http://xxx.com/xxx.jpg`                                                                                              |
+| img           | `featureImages` 中的某个值     | 文章特征图，推荐使用 oss(腾讯云、阿里云等)来做图片的路径.如: `http://xxx.com/xxx.jpg`                                                                                                      |
 | top           | `true`                         | 推荐文章（文章是否置顶），如果 `top` 值为 `true`，则会作为首页推荐文章                                                                                                                     |
 | cover         | `false`                        | `v1.0.2`版本新增，表示该文章是否需要加入到首页轮播封面中                                                                                                                                   |
 | coverImg      | 无                             | `v1.0.2`版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片                                                                                           |
@@ -67,7 +67,7 @@ tags:
 
 ## 部署
 
-执行脚本 deploy.sh 会将构建好的 public 下的资源复制到远程服务器上
+通过 gitlab ci 自动部署到 [github pages](https://mrw1108.github.io)
 
 ## 感谢
 
