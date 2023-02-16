@@ -67,7 +67,7 @@ tags:
 
 ## 部署
 
-通过 gitlab ci 自动部署到 [github pages](https://mrw1108.github.io)
+通过 github ci 自动部署到 [github pages](https://mrw1108.github.io)
 
 ## 感谢
 
