@@ -1,3 +1,15 @@
+---
+title: JS继承
+top: false
+cover: true
+date: 2023-05-18
+summary: JS 继承依赖原型 >> 原型 >> 原型式继承 >> 原型链继承 >> 组合继承 >> 寄生式组合继承
+categories: 前端
+tags:
+  - JavaScript
+  - 继承
+---
+
 # 继承与原型链
 
 对于使用过基于类的语言 (如 Java 或 C++) 的开发者们来说，JavaScript 实在是有些令人困惑 —— JavaScript 是动态的，本身不提供一个 `class` 的实现。即便是在 ES2015/ES6 中引入了 `class` 关键字，但那也只是语法糖，JavaScript 仍然是基于原型的。

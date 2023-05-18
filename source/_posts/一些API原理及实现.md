@@ -1,3 +1,15 @@
+---
+title: JS API原理及实现
+top: true
+cover: true
+date: 2023-05-18
+summary: 一些JS API原理及实现
+categories: 前端
+tags:
+  - JavaScript
+  - API
+---
+
 ## &#x20;API
 
 1. [new](#new)
