@@ -8,20 +8,19 @@ mathjax: true
 img:
 date: 2021-01-08 21:12:27
 keywords: "npm package.json  组件发布"
-tags: 
-    - npm
-    - 前端
-categories: 
-    - npm
-    - 前端
+tags:
+  - npm
+  - 前端
+categories:
+  - npm
+  - 前端
 
 summary: npm 相关 package.json 组件开发及发布
-
 ---
 
 ## 前言
 
-最近在研究  `npm` 组件发布，碰到一些相关问题，算是整理一下。
+最近在研究 `npm` 组件发布，碰到一些相关问题，算是整理一下。
 
 ### 涉及内容
 
@@ -36,7 +35,7 @@ summary: npm 相关 package.json 组件开发及发布
 package.json 定义了当前项目中 `npm包` 之间的依赖关系和项目的一些配置信息（项目名称，版本，描述，开发人，许可证 等等）。
 
 当说到包管理器，就会遇到 `yarn` 和 `npm` 的选择性问题。我是喜欢用 `yarn`
-的，看看 `github` 上的开源项目，比如 `vue` 项目下就有 `yarn.lock` 文件，由此我猜测 `yarn` 可能更受欢迎一些，日常使用中我也是 `yarn` 用的比较多。 
+的，看看 `github` 上的开源项目，比如 `vue` 项目下就有 `yarn.lock` 文件，由此我猜测 `yarn` 可能更受欢迎一些，日常使用中我也是 `yarn` 用的比较多。
 
 当我们 `npm install` 或 `yarn install` 会根据项目下的 `package.json` 解析依赖包之间的依赖关系然后从配置的 `npm registry` （ `.npmrc` 可以配置对应的 `registry`）地址中搜索并下载包。
 
@@ -48,50 +47,44 @@ package.json 定义了当前项目中 `npm包` 之间的依赖关系和项目的
 
 ```json
 {
-    "name": "@mflyyou/npm-description",
-    "version": "0.1.0",
-    "private": true,
-    "author": "张攀钦",
-    "license": "MIT",
-    "main":"index.js",
-    "keywords": [
-        "npm 搜索关键词"
-    ],
-    "publishConfig": {
-        "registry": "https://registry.npmjs.com/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "http://git.com/项目git地址"
-    },
-    "files": [
-        "dist",
-        "src"
-    ],
-    "bugs": {
-        "url": "http://localhost:8080//issues",
-        "email": "bug@example.com"
-    },
-    "contributors": [
-        {
-            "name": "zhangpanqin",
-            "email": "zhangpanqin@email.com"
-        }
-    ],
-    "scripts": {
-        "dev": "sh ./build/build.sh",
-        "npm-version": "npm -v",
-        "serve": "vue-cli-service serve"
-    },
-    "dependencies": {
-        "vue": "^2.5.21"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.3.0"
-    },
-    "peerDependencies":{}
+  "name": "@mflyyou/npm-description",
+  "version": "0.1.0",
+  "private": true,
+  "author": "张攀钦",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": ["npm 搜索关键词"],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.com/项目git地址"
+  },
+  "files": ["dist", "src"],
+  "bugs": {
+    "url": "http://localhost:8080//issues",
+    "email": "bug@example.com"
+  },
+  "contributors": [
+    {
+      "name": "zhangpanqin",
+      "email": "zhangpanqin@email.com"
+    }
+  ],
+  "scripts": {
+    "dev": "sh ./build/build.sh",
+    "npm-version": "npm -v",
+    "serve": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "vue": "^2.5.21"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.3.0"
+  },
+  "peerDependencies": {}
 }
-
 ```
 
 ### package.json 字段介绍
@@ -115,21 +108,21 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 'npm ls' to inspect current package/dependency versions
 ```
 
- "version": "0.1.0”, 对应 `major-minor-patch` 
+"version": "0.1.0”, 对应 `major-minor-patch`
 
 ```bash
 # 更新 major 的位置，其余位置为 0
-npm version major 
+npm version major
 
 # 更新 minor 的位置，major 不变，其余位置为 0
-npm version minor 
+npm version minor
 
 # 更新 patch 的位置，其余位置不变
-npm version patch 
+npm version patch
 ```
 
 - major 对应一次大的迭代，比如 vue 3.0 ts 重新，添加新的功能，更新 major 版本号
-- minor 对应小版本迭代，发生兼容旧版API的修改或功能添加时，更新 minor 版本号
+- minor 对应小版本迭代，发生兼容旧版 API 的修改或功能添加时，更新 minor 版本号
 - patch 对应修订版本号，一般针对 bug 修复时，修改 patch 的版本号
 
 当你的项目需要发布的时候，version 一定要和以前的不一样，否则发布不成功。
@@ -154,9 +147,7 @@ npm version patch
 }
 ```
 
-有的时候呢我们在 `.npmrc` 配置了别的 `registry` ，比如淘宝镜像。我安装依赖包的时候呢，想从淘宝镜像安装。发布插件的时候想发布到官网上。就可以在 `publishConfig` 中配置了。 
-
-
+有的时候呢我们在 `.npmrc` 配置了别的 `registry` ，比如淘宝镜像。我安装依赖包的时候呢，想从淘宝镜像安装。发布插件的时候想发布到官网上。就可以在 `publishConfig` 中配置了。
 
 #### files
 
@@ -173,7 +164,7 @@ npm version patch
     // 运行 shell 脚本
 	"dev": "sh ./build/build.sh",
 	"build": "npm -v",
-    // build 成功之后会执行 publish    
+    // build 成功之后会执行 publish
 	"pub": "npm run build && npm publish"
 }
 ```
@@ -186,7 +177,7 @@ npm version patch
 
 fly-npm 和 fly-use-npm 已发布。
 
-注意，这里也有个坑。比如我有两个插件 fly-npm，fly-use-npm，fly-use-npm 中 dependencies 中依赖 fly-npm。我在 my-vue 项目开发的时候引入 fly-use-npm。我是可以直接 `import fly-use-npm` 项目可以正常运行。但是当你 `import fly-npm`  项目解析依赖会报错。因为只有在当前项目中 dependencies 引入的依赖才可以被 import。
+注意，这里也有个坑。比如我有两个插件 fly-npm，fly-use-npm，fly-use-npm 中 dependencies 中依赖 fly-npm。我在 my-vue 项目开发的时候引入 fly-use-npm。我是可以直接 `import fly-use-npm` 项目可以正常运行。但是当你 `import fly-npm` 项目解析依赖会报错。因为只有在当前项目中 dependencies 引入的依赖才可以被 import。
 
 ```js
 <template>
@@ -198,7 +189,7 @@ fly-npm 和 fly-use-npm 已发布。
 </template>
 <script>
 // fly-npm 只有在当前 my-vue 项目 dependencies 引入才可以被 import
-//import flyNpm from 'fly-npm';    
+//import flyNpm from 'fly-npm';
 import flyUseNpm from 'fly-use-npm';
 
 export default {
@@ -214,8 +205,6 @@ export default {
 
 ```
 
-
-
 #### devDependencies
 
 为开发依赖，打包的时候不会打包进去。比如我们使用的 `babel` `webpak` 等相关的插件，打包的时候，并不会被打包进去。
@@ -226,9 +215,7 @@ export default {
 
 我创建一个 vue 项目 my-vue 依赖 fly-use-npm(它依赖 fly-npm 1.0.0)，fly-npm(2.0.0)，在我们项目中可以看到。
 
-
 当 `my-vue` 没有引入 `fly-npm 2.0.0` 的时候，`my-vue/node_modules/fly-npm` 为 1.0.0。
-
 
 ![](http://oss.mflyyou.cn/blog/20200304021831.png)
 
@@ -267,7 +254,7 @@ export default {
 
 创建 vue 项目 my-vue，依赖 fly-use-npm(4.0.0,其 `peerDependencies` 是 fly-npm 1.0.0 )。
 
-`peerDependencies`  添加的依赖包，不会（测试的 yarn 1.22.0，npm 6.13.7）自动安装的。
+`peerDependencies` 添加的依赖包，不会（测试的 yarn 1.22.0，npm 6.13.7）自动安装的。
 
 当我在 my-vue 项目 `yarn install` 的时候，由于没有引入 `fly-npm` 会报错。
 
@@ -279,13 +266,13 @@ export default {
 
 ```js
 // fly-use-npm
-import flyNpm from 'fly-npm';
+import flyNpm from "fly-npm";
 const obj = () => {
-    console.log('引用的 fly-npm 版本为:', flyNpm.version);
-    if (flyNpm.version > 1) {
-        throw new Error('版本大于 1');
-    }
-}
+  console.log("引用的 fly-npm 版本为:", flyNpm.version);
+  if (flyNpm.version > 1) {
+    throw new Error("版本大于 1");
+  }
+};
 export default obj;
 ```
 
@@ -299,8 +286,6 @@ export default obj;
 
 ## .npmrc
 
-
-
 `package.json` 中的依赖包从哪里安装呢？.npmrc 可以配置依赖包从哪里安装，也可以配置 npm 的一些别的配置。
 
 ### .npmrc 配置文件优先级
@@ -310,14 +295,10 @@ export default obj;
 - 全局配置文件：`/usr/local/etc/npmrc`
 - npm 内置配置文件 `/path/to/npm/npmrc`
 
-
-
 ```bash
 # 获取 .npmrc 用户配置文件路径
 npm config get userconfig
 ```
-
-
 
 项目下 .npmrc 文件的优先级最高，可以每个项目配置不同的镜像，项目之间的配置互不影响。我们也可以指定特殊的命名空间（scope）的来源。
 
@@ -370,11 +351,9 @@ registry = https://registry.npm.taobao.org
 
 这样下载依赖包会从淘宝镜像下载，发布依赖包会发布到 npm 官网去。
 
-
-
 ### 添加账号到你电脑
 
- [添加账号命令官网说明 npm adduser](https://docs.npmjs.com/cli/adduser)
+[添加账号命令官网说明 npm adduser](https://docs.npmjs.com/cli/adduser)
 
 ```
 # npm adduser [--registry=url] [--scope=@orgname] [--always-auth] [--auth-type=legacy]
@@ -389,66 +368,54 @@ registry=https://registry.npmjs.com/
 //registry.npmjs.com/:_authToken=xxx
 ```
 
-
 ### 开发你的组件，使用 webpack,babel 处理
 
 由于 webpack,babel 配置比较麻烦，这里使用 [vue-cli](https://cli.vuejs.org/zh/) 脚手架进行开发
 
-#### package.json 
+#### package.json
 
 ```json
 {
-    "name": "@thingjs-ad/thingjs-app",
-    "version": "0.1.1",
-    "private": false,
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build --target lib --name thingjs-app ./src/index.js",
-        "lint": "vue-cli-service lint",
-        "pub": "npm run build && npm publish --access=public"
+  "name": "@thingjs-ad/thingjs-app",
+  "version": "0.1.1",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name thingjs-app ./src/index.js",
+    "lint": "vue-cli-service lint",
+    "pub": "npm run build && npm publish --access=public"
+  },
+  "main": "dist/thingjs-app.umd.min.js",
+  "files": ["src", "dist"],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.2.0",
+    "@vue/cli-plugin-eslint": "^4.2.0",
+    "@vue/cli-service": "^4.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
     },
-    "main": "dist/thingjs-app.umd.min.js",
-    "files": [
-        "src",
-        "dist"
-    ],
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^4.2.0",
-        "@vue/cli-plugin-eslint": "^4.2.0",
-        "@vue/cli-service": "^4.2.0",
-        "babel-eslint": "^10.0.3",
-        "eslint": "^6.7.2",
-        "eslint-plugin-vue": "^6.1.2",
-        "vue-template-compiler": "^2.6.11"
+    "extends": ["plugin:vue/essential", "eslint:recommended"],
+    "parserOptions": {
+      "parser": "babel-eslint"
     },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "extends": [
-            "plugin:vue/essential",
-            "eslint:recommended"
-        ],
-        "parserOptions": {
-            "parser": "babel-eslint"
-        },
-        "rules": {}
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
-    ]
+    "rules": {}
+  },
+  "browserslist": ["> 1%", "last 2 versions"]
 }
 ```
-
-
 
 #### 组件内容
 
 ![](http://oss.mflyyou.cn/blog/20200304021841.png)
 
-- AA.vue 
+- AA.vue
 
 ```
 <template>
@@ -495,5 +462,3 @@ export default {
 ```bash
 npm publish --access=public
 ```
-
-
