@@ -1,4 +1,4 @@
-﻿# my-blog
+# my-blog
 
 基于 hexo 搭建的个人博客，Record All~
 
