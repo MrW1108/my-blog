@@ -40,17 +40,20 @@ function new() {
 ### <span id='Promis.all'>Promis.all</span>
 
 ```javascript
-Promise.all = function (promises) {
-  let results = [];
+function myPromisAll(iterable) {
+  let result = [];
   let count = 0;
-  const len = promsies.length;
+  let fulfilledCount = 0;
   return new Promise((resolve, reject) => {
-    for (let i = 0; i < len; i++) {
-      Promise.resolve(promises[i]).then(
-        (res) => {
-          result[i] = res;
-          count++;
-          if (count === len) {
+    // 用for...of， 因为参数是 iterable 类型（Array, Set, Map )
+    for (const prom of iterable) {
+      const i = count;
+      count++;
+      Promise.resolve(prom).then(
+        (data) => {
+          result[i] = data;
+          fulfilledCount++;
+          if (fulfilledCount === count) {
             resolve(result);
           }
         },
@@ -59,8 +62,11 @@ Promise.all = function (promises) {
         }
       );
     }
+    if (count === 0) {
+      resolve(result);
+    }
   });
-};
+}
 ```
 
 ### <span id='Function.prototype.apply()'>Function.prototype.apply()</span>
