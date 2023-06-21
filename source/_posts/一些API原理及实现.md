@@ -42,18 +42,16 @@ function new() {
 ```javascript
 function myPromisAll(iterable) {
   let result = [];
-  let count = 0;
   let fulfilledCount = 0;
+  const promises = Array.from(iterable);
   return new Promise((resolve, reject) => {
-    // 用for...of， 因为参数是 iterable 类型（Array, Set, Map )
-    for (const prom of iterable) {
-      const i = count;
-      count++;
+    promises.forEach((prom, i) => {
       Promise.resolve(prom).then(
         (data) => {
+          console.log(data, i);
           result[i] = data;
           fulfilledCount++;
-          if (fulfilledCount === count) {
+          if (fulfilledCount === promises.length) {
             resolve(result);
           }
         },
@@ -61,8 +59,8 @@ function myPromisAll(iterable) {
           reject(reason);
         }
       );
-    }
-    if (count === 0) {
+    });
+    if (promises.length === 0) {
       resolve(result);
     }
   });
