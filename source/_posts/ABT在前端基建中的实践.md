@@ -2,8 +2,8 @@
 title: ABT在前端基建中的实践
 top: false
 cover: true
-date: 2023-6-24
-summary: 从0到1开发整个A/B Testing SDK，为产品制定AB实验提供技术支撑，SDK可作用于Vue、React、Webpack、Vite、BFF等前端常见的技术场景，为AB实验开发提供全流程支撑
+date: 2024-6-24
+summary: 从0到1开发整个A/B Testing SDK，为产品制定AB实验提供技术支撑
 categories: 前端
 tags:
   - ABT
