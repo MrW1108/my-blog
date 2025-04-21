@@ -61,10 +61,6 @@ tags:
 | keywords      | 文章标题                       | 文章关键字，SEO 时需要                                                                                                                                                                     |
 | reprintPolicy | cc_by                          | 文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个                                                                        |
 
-## 搭建教程
-
-我写的关于 [hexo,搭建个人博客](https://mrw1108.github.io/2021/01/08/hexo-da-jian-ge-ren-bo-ke/)
-
 ## 部署
 
 通过 github ci 自动部署到 [github pages](https://mrw1108.github.io)
