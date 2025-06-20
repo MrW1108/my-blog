@@ -1,11 +1,9 @@
- 
-
 ---
 title: Elpis 学习心得
 top: true
 cover: true
 date: 2025-6-19
-summary: 基于 node + vue3 + webpack5 ，完成一个叫 elpis 的全栈开发框架。Elpis 思想：通过 80% 的抽离和重复工作支持配置化，20% 的定制化工作，减少 CRUD 体力活的比例，让程序员更专注于创造
+summary: 基于 node + vue3 + webpack5 ，完成一个名为 elpis 的全栈开发框架。Elpis 思想：通过 80% 的抽离和重复工作支持配置化，20% 的定制化工作，减少 CRUD 体力活的比例，让程序员更专注于创造
 categories: 前端
 tags:
   - 实践
@@ -21,11 +19,11 @@ tags:
 
 ### 1.1 当前大多数前端开发的痛点
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/1-elpis.png) 随着前端框架的成熟，开发者们越来越多地陷入了重复的 CRUD 工作中，忽略了程序员的本质：7 分构想，3 分代码。Elpis 的出现，旨在分享一种思想：通过 80% 的抽离和重复工作支持配置化，20% 的定制化工作，减少 CRUD 体力活的比例，让程序员更专注于创造。
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/1-elpis.png) 随着前端框架的成熟，开发者们越来越多地陷入了重复的 CRUD 工作中，忽略了程序员的本质：7 分构想，3 分代码。Elpis 的出现，旨在分享一种思想：通过 80% 的抽离和重复工作支持配置化，20% 的定制化工作，减少 CRUD 体力活的比例，让程序员更专注于创造。
 
 ### 1.2 庞大且功能全的系统
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/2-elpis.png) 缺点：
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/2-elpis.png) 缺点：
 
 * 项目体积大
 * 不适合**多用户**交付场景
@@ -35,7 +33,7 @@ tags:
 
 ### 1.3 多子系统：类似微前端
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/3-elpis.png) 缺点：
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/3-elpis.png) 缺点：
 
 * 通用的建站能力不适合**领域强的场景**
 * 过分灵活，配置复杂，**若处理不好容易代码断代，此时对提效没有实质的提高，反而成了负担**
@@ -83,13 +81,13 @@ tags:
 
 ### 2.1 宏观角度
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/4-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/4-elpis.png)
 
 * **通过约定的规则**，在对应的文件目录放置对应的模块
 * 通过elpis-core 对文件进行解析挂载到app对象中
 * 在进行编码时候通过app就可以获取到我们想要使用的能力
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/5-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/5-elpis.png)
 
 #### 1.接入层
 
@@ -125,12 +123,12 @@ tags:
 
 ### 2.3 koa洋葱模型
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/6-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/6-elpis.png)
 
 * 业务逻辑前遵从：**先用先处理**
 * 业务逻辑后遵从：**后用先处理**
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/7-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/7-elpis.png)
 
 ## 三、工程化
 
@@ -144,17 +142,17 @@ tags:
 
 ### 3.2 流程
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/8-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/8-elpis.png)
 
 **其中模版解析就是工程化所需要处理的**
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/9-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/9-elpis.png)
 
 ### 3.3 热更新
 
 **热更新一般是在开发时候使用**
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/10-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/10-elpis.png)
 
 **原理**
 
@@ -221,17 +219,17 @@ tags:
 
 当前开发一个系统（以中后台系统为例子），大部分程序员都是产品说出一个页面的需求，程序员看到什么就开始开发什么，这样会导致大量的重复CRUD的工作，对自身的成长没有什么帮助 有点经验的，就会根据自身的开发习惯，对页面部分对页面进行封装，通过配置的方式渲染页面，虽然更灵活了减少了一定的工作量，但这种往往难以形成统一的风格，往往需要根据需求进行妥协，在开发到一定时间后，组件反而会很冗余不好维护
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/11-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/11-elpis.png)
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/12-elpis.png) 
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/12-elpis.png) 
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/13-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/13-elpis.png)
 
 ### 4.1 在接触elpis前，自己设计的大屏系统也有类似的想法，以下是大致的描述
 
 通过布局组件（layout-comp）将页面分为24\*24的区域，利用动态组件+插槽的方式保证系统的灵活性
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/14-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/14-elpis.png)
 
 通过配置的方式对区域大小进行渲染
 
@@ -446,7 +444,7 @@ DSL是一种专门为某个特定领域或问题域设计的编程语言。它�
 
 大致框架如下：**其中绿色为自定义组件**：可自行变动保证灵活性，**蓝色部分为已设计部分**：固定部分减少重复操作
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/15-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/15-elpis.png)
 
 #### 1\. elpis核心：80%配置减少重复工作， 20%定制化增加系统的拓展性
 
@@ -476,7 +474,7 @@ menu:[
 
 ##### 1.2页面布局组件
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/16-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/16-elpis.png)
 
 * header-view用来处理菜单栏的点击逻辑，并根据所点击的键去发送事件出上层组件影响 slot:main-content渲染内容
 * header-container 一个纯进行渲染的组件不进行逻辑处理
@@ -507,13 +505,13 @@ menu:[
 * components
     * 页面涉及到的子组件
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/17-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/17-elpis.png)
 
 大致可以理解为这样一张图，核心就是我需要哪个模块，我就新增一个配置用来描述，通过解析器解析成对应的模块
 
 我需要什么就新增一个描述，**通过解析器转换成渲染组件所需要的数据，然后进行渲染交互**
 
-![image.png](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/18-elpis.png)
+![](https://mrpaly.oss-cn-beijing.aliyuncs.com/Img/blogImg/18-elpis.png)
 
 ## 五.动态组件
 
