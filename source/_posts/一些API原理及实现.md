@@ -1,6 +1,6 @@
 ---
 title: JS API原理及实现
-top: true
+top: false
 cover: true
 date: 2023-05-18
 summary: 一些JS API原理及实现
@@ -12,10 +12,11 @@ tags:
 
 ## &#x20;API
 
-1. [new](#new)
-2. [Promise.all](#Promis.all)
-3. [Function.prototype.apply()](<#Function.prototype.apply()>)
-4. [深拷贝](#深拷贝)
+- [ API](#-api)
+  - [new](#new)
+  - [Promis.all](#promisall)
+  - [Function.prototype.apply()](#functionprototypeapply)
+  - [深拷贝](#深拷贝)
 
 ### new
 

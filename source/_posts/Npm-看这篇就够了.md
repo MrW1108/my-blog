@@ -1,7 +1,7 @@
 ﻿---
 # 名称
 title: npm,看这篇就够了
-top: true
+top: false
 cover: true
 toc: true
 mathjax: true
