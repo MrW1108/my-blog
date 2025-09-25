@@ -37,7 +37,6 @@ jobs:
         run: |
           export TZ='Asia/Shanghai'
           npm i -g hexo-cli
-          npm i
 
       - name: 安装插件
         run: |
