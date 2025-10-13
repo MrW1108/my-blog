@@ -438,6 +438,7 @@ libs:
     ribbonRefresh: /libs/background/ribbon-refresh.min.js
     ribbon_dynamic: /libs/background/ribbon-dynamic.js
     instantpage: /libs/instantpage/instantpage.js
+    mermaid: https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js
 
 # The post featured images that needs to be displayed when there is no image.
 # 无文章特色图片时需要显示的文章特色图片.
@@ -556,6 +557,10 @@ navMenu:
 
 # 网页预加载.
 instantpage:
+  enable: true
+
+# Mermaid 图表支持
+mermaid:
   enable: true
 
 # banner 是否每日切换.

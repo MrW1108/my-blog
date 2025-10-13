@@ -109,6 +109,33 @@
     <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.instantpage) %>" type="module"></script>
     <% } %>
 
+    <% if (theme.mermaid.enable && config.mermaid.enable) { %>
+    <script src="<%- theme.libs.js.mermaid %>"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'base',
+                themeVariables: {
+                    'primaryColor': '#f8f9fa',
+                    'primaryTextColor': '#2c3e50',
+                    'primaryBorderColor': '#34495e',
+                    'lineColor': '#7f8c8d',
+                    'tertiaryColor': '#ecf0f1',
+                    'background': '#ffffff',
+                    'fontFamily': '"Caveat", "Architects Daughter", cursive',
+                    'fontSize': '16px',
+                    'mainBkg': '#ffffff'
+                },
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true
+                }
+            });
+        });
+    </script>
+    <% } %>
+
 </body>
 
 </html>
