@@ -58,7 +58,7 @@ hexo new post <title>
 
 #### 示例
 
-```markdown
+```json
 ---
 title: typora-vue-theme主题介绍
 date: 2021-01-08 09:25:00
