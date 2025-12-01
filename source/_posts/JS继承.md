@@ -40,8 +40,7 @@ function create (o) {
   let F = function () { }
   F.prototype = o
   return new F()
-)
-}A
+}
 const A = {
   name: 'li',
   sayName: function () {

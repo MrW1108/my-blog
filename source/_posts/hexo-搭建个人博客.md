@@ -35,7 +35,7 @@ tags:
 
 ## hexo 使用
 
-```
+```bash
 # 清除构建生成的 public 目录
 hexo clean
 # 生成当前目录资源
@@ -52,7 +52,7 @@ hexo s
 hexo new post <title>
 ```
 
-```
+```text
 或者将md文件放进/source/_posts文件夹下
 ```
 
