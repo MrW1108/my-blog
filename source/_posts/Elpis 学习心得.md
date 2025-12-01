@@ -661,8 +661,8 @@ menu:[
 * 暴露自定义页面(外部定义路由，暴露方法)到entry.dashboard进行合并
     
 * 暴露组件
-    
-    ```Javascript
+  
+    ```js
        // 业务拓展 component 配置
        import BusinessComponentConfig from '$businessComponentConfig'
     
@@ -681,8 +681,6 @@ menu:[
          ...ComponentConfig,
          ...BusinessComponentConfig
        }
-       ```
-    
     
     ```
     
