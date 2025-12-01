@@ -6,8 +6,8 @@
 title: .Paly
 # 副标题
 subtitle: paly
-description: 前端 | javascript | vue | react
-keywords: ""
+description: 专注前端开发的技术博客，分享JavaScript、Vue、React、性能优化、AI应用等前端技术经验与最佳实践
+keywords: "前端开发,JavaScript,Vue,React,性能优化,TensorFlow.js,软件工程,技术博客"
 author: .Paly
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -160,3 +160,8 @@ mermaid:
   enable: true
   version: "8.14.0"
   options:
+    theme: 'base'
+    themeVariables:
+      primaryColor: '#f9f9f9'
+      primaryTextColor: '#333'
+      fontFamily: '"Caveat", "Architects Daughter", cursive'
