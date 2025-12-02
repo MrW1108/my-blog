@@ -9,11 +9,9 @@ img:
 date: 2021-01-08 21:12:27
 keywords: "npm package.json  组件发布"
 tags:
-  - npm
   - 前端
 categories:
   - npm
-  - 前端
 
 summary: npm 相关 package.json 组件开发及发布
 ---
