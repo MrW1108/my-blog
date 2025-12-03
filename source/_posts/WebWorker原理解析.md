@@ -197,7 +197,7 @@ class WorkerPool {
 ```
 
 ### 7.2 使用成熟的库
-可以了解下 GoogleChrome Labs 出品的 [Comlink](https://github.com/GoogleChromeLabs/comlink) 库，它通过 Proxy 和 Promise 极大的简化了 Worker 的使用，让你几乎感觉不到 postMessage 的存在，详情可以参考[Comlink原理解析](https://mrw1108.github.io/2025/12/01/comlink-yuan-li-xiang-jie/)
+可以了解下 GoogleChrome Labs 出品的 [Comlink](https://github.com/GoogleChromeLabs/comlink) 库，它通过 Proxy 和 Promise 极大的简化了 Worker 的使用，让你几乎感觉不到 postMessage 的存在，详情可以参考[Comlink原理解析](https://mrw1108.github.io/2025/12/01/comlink-yuan-li-jie-xi/)
 
 ### 7.3 Worker与SharedArrayBuffer
 在支持的环境中，可以使用SharedArrayBuffer实现真正的内存共享。
