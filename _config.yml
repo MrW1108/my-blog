@@ -101,6 +101,8 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+# 时区相关配置优化
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination

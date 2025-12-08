@@ -7,7 +7,7 @@
     },
     "scripts": {
         "dev": "npm run build && hexo s",
-        "build": "hexo clean && hexo g"
+        "build": "TZ=Asia/Shanghai hexo clean && TZ=Asia/Shanghai hexo g"
     },
     "dependencies": {
         "eslint": "^6.0.1",
